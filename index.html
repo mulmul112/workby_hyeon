@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Ji_Online archive</title>
+	<meta name="description" content="설명">
+	<meta name="keywords" content="키워드1, 키워드2">
+	<link rel="stylesheet" href="assets/css/style.css">
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+</head>
+
+
+
+<body>
+<!------------------------------------------------제목-->
+<br><br>
+<h1>J i s o o h y e o n</h1>
+<br><br><br><br>
+
+
+<!------------------------------------------------슬라이드-->
+<style>
+/* 슬라이드 전체 영역 */
+..slideshow {
+  position: relative;
+  width: 900px;
+  height: 500px;
+  overflow: hidden;
+  background: #eee;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+</style>
+<!------------------------------------------------슬라이드 이미지-->
+<div class="slideshow">
+
+  <div class="slide active">
+    <img src="image/jhibli1.png" alt="Image 1">
+  </div>
+
+  <div class="slide">
+    <img src="image/jhibli2.png" alt="Image 2">
+  </div>
+
+  <div class="slide">
+    <img src="image/jhibli3.png" alt="Image 3">
+  </div>
+
+  <div class="slide">
+    <img src="image/jhibli4.png" alt="Image 4">
+  </div>
+
+</div>
+<!------------------------------------------------슬라이드 이미지-->
+
+<script>
+(function() {
+  const slideshow = document.querySelector('.slideshow');
+  if (!slideshow) return;
+
+  const slides = slideshow.querySelectorAll('.slide');
+  let currentSlide = 0;
+
+  setInterval(function() {
+    slides[currentSlide].classList.remove('active');
+
+    currentSlide = (currentSlide + 1) % slides.length;
+
+    slides[currentSlide].classList.add('active');
+  }, 5000);
+})();
+</script>
+</style>
+
+<!------------------------------------------------슬라이드-->
+
+
+<ul>Project
+	<li>회화</li>
+	<li>일러스트</li>
+	<li><a href = "../about/index">영상</a></li>
+</ul>
+
+<br>
+
+<ol>최근 읽은 책
+	<li>프로젝트 헤일메리</li>
+	<li>빵충 사육 준수 사항</li>
+	<li>꿈꾸는 행성</li>
+</ol>
+
+
+	<script src="assets/js/script.js"></script>
+</body>
+</html>
