@@ -4,26 +4,43 @@
  box-sizing: border-box;
 }
 
-body{
+body{}
+
+
+/* 슬라이드쇼 + 리스트 전체 배치 */
+.content-layout {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 25px;              /* X 조정: 슬라이드와 리스트 사이 간격 */
+  margin-top: 0px;        /* X 조정: 전체 영역 위아래 위치 */
+  margin-left: 0px;       /* X 조정: 전체 영역 좌우 위치 */
+}
+
+/* 슬라이드쇼 */
 .slideshow {
   position: relative;
-  width: 800px;   /* 가로 X */
-  height: 450px;  /* 세로 Y */
+  width: 1000px;          /* X 조정: 슬라이드 가로 크기 */
+  height: 500px;          /* X 조정: 슬라이드 세로 크기 */
   overflow: hidden;
   background: #eee;
+  flex-shrink: 0;
 }
 
 .slide {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   opacity: 0;
+  visibility: hidden;
   transition: opacity 1s ease-in-out;
 }
 
 .slide.active {
   opacity: 1;
+  visibility: visible;
 }
 
 .slide img {
@@ -31,4 +48,107 @@ body{
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+/* 오른쪽 리스트 */
+.side-list {
+  width: 250px;           /* X 조정: 리스트 영역 가로 크기 */
+  margin-top: 0px;        /* X 조정: 리스트 위아래 위치 */
+  margin-left: 0px;       /* X 조정: 리스트 좌우 위치 */
+  padding: 0px;           /* X 조정: 리스트 내부 여백 */
+
+  border: none;           /* 리스트 바깥 사각형 제거 */
+}
+
+/* 리스트 제목 */
+.side-list h3 {
+  font-size: 20px;        /* X 조정: 제목 글자 크기 */
+  margin-bottom: 20px;    /* X 조정: 제목과 첫 항목 사이 간격 */
+}
+
+/* 리스트 기본 설정 */
+.side-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* 리스트 항목 */
+.side-list li {
+  margin-bottom: 80px;    /* X 조정: 항목 사이 간격 */
+  font-size: 15px;        /* X 조정: 항목 글자 크기 */
+}
+
+/* 두 번째 항목 버튼 */
+.popup-open {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  text-align: left;
+}
+
+.popup-open:hover {
+  opacity: 0.5;           /* 마우스를 올렸을 때 투명도 */
+}
+
+/* ============================= */
+/* 팝업창 CSS */
+/* ============================= */
+
+/* 팝업 배경 */
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+
+  display: flex;
+  justify-content: center; /* X 조정: 팝업 가로 위치 */
+  align-items: center;     /* X 조정: 팝업 세로 위치 */
+
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* 팝업창 본체 */
+.popup-window {
+  position: relative;
+
+  width: 500px;            /* X 조정: 팝업 가로 크기 */
+  min-height: 300px;       /* X 조정: 팝업 최소 세로 크기 */
+
+  padding: 40px;           /* X 조정: 팝업 내부 여백 */
+
+  background: white;
+  color: black;
+}
+
+/* 팝업 제목 */
+.popup-window h2 {
+  margin-bottom: 20px;     /* X 조정: 제목과 내용 사이 간격 */
+  font-size: 24px;
+}
+
+/* 팝업 내용 */
+.popup-window p {
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* 팝업 닫기 버튼 */
+.popup-close {
+  position: absolute;
+  top: 15px;               /* X 조정: 닫기 버튼 위쪽 위치 */
+  right: 15px;             /* X 조정: 닫기 버튼 오른쪽 위치 */
+
+  border: none;
+  background: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* 팝업이 닫혀 있을 때 */
+.popup-overlay[hidden] {
+  display: none;
 }

@@ -15,15 +15,15 @@
 <!------------------------------------------------제목-->
 <br><br>
 <h1>J i s o o h y e o n</h1>
-<br><br><br><br>
+<br><br>
 
 
 <!------------------------------------------------슬라이드-->
 <style>
 /* 슬라이드 전체 영역 */
-..slideshow {
+.slideshow {
   position: relative;
-  width: 900px;
+  width: 1000px;
   height: 500px;
   overflow: hidden;
   background: #eee;
@@ -52,27 +52,84 @@
   display: block;
 }
 </style>
-<!------------------------------------------------슬라이드 이미지-->
-<div class="slideshow">
+<!------------------------------------------------슬라이드 + 리스트-->
 
-  <div class="slide active">
-    <img src="image/jhibli1.png" alt="Image 1">
-  </div>
+<div class="content-layout">
 
-  <div class="slide">
-    <img src="image/jhibli2.png" alt="Image 2">
-  </div>
+  <!-- 왼쪽 슬라이드쇼 -->
+  <div class="slideshow">
 
-  <div class="slide">
-    <img src="image/jhibli3.png" alt="Image 3">
-  </div>
+    <div class="slide active">
+      <img src="image/jhibli1.png" alt="Image 1">
+    </div>
 
-  <div class="slide">
-    <img src="image/jhibli4.png" alt="Image 4">
+    <div class="slide">
+      <img src="image/jhibli2.png" alt="Image 2">
+    </div>
+
+    <div class="slide">
+      <img src="image/jhibli3.png" alt="Image 3">
+    </div>
+
+    <div class="slide">
+      <img src="image/jhibli4.png" alt="Image 4">
+    </div>
+
+</div>
+
+
+
+ <!-- 오른쪽 리스트 -->
+<div class="side-list">
+
+  <h4></h4>
+
+  <ul>
+    <li><a herf="">. 첫 번째 항목</a></li>
+
+    <!-- 두 번째 항목만 팝업 연결 -->
+    <li>
+      <button class="popup-open" type="button">
+        . 두 번째 항목
+      </button>
+    </li>
+
+    <li><a herf="">. 세 번째 항목</a></li>
+    <li><a herf="">. 네 번째 항목</a></li>
+  </ul>
+</div>
+
+
+
+<!-- ============================= -->
+<!-- 두 번째 항목 팝업창 -->
+<!-- ============================= -->
+
+<div class="popup-overlay" id="itemPopup" hidden>
+
+  <div class="popup-window">
+
+    <!-- 닫기 버튼 -->
+    <button class="popup-close" id="popupClose" type="button">
+      ×
+    </button>
+
+    <!-- 팝업 제목 -->
+    <h2>두 번째 항목</h2>
+
+    <!-- 팝업 내용 -->
+    <p>
+      이곳에 팝업창에 표시할 내용을 입력하면 됩니다.
+      텍스트뿐만 아니라 이미지나 다른 HTML 요소도 추가할 수 있습니다.
+    </p>
+
   </div>
 
 </div>
-<!------------------------------------------------슬라이드 이미지-->
+
+
+</div>
+
 
 <script>
 (function() {
@@ -91,26 +148,9 @@
   }, 5000);
 })();
 </script>
+
 </style>
 
-<!------------------------------------------------슬라이드-->
-
-
-<ul>Project
-	<li>회화</li>
-	<li>일러스트</li>
-	<li><a href = "../about/index">영상</a></li>
-</ul>
-
-<br>
-
-<ol>최근 읽은 책
-	<li>프로젝트 헤일메리</li>
-	<li>빵충 사육 준수 사항</li>
-	<li>꿈꾸는 행성</li>
-</ol>
-
-
-	<script src="assets/js/script.js"></script>
 </body>
+
 </html>
